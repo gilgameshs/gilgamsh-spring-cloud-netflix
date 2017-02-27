@@ -1,0 +1,17 @@
+server:
+  port: 8999
+
+spring:
+  application:
+    name: config-client-foo
+  cloud:
+    config:
+      discovery:
+        enabled: true
+      fail-fast: true
+      retry:
+        initial-interval: 1000
+        max-attempts: 6
+      name: foo
+  profiles:
+    active: dev

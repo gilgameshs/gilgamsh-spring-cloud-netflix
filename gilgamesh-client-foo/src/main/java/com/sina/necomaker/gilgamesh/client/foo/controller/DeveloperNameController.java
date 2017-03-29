@@ -17,4 +17,9 @@ public class DeveloperNameController {
     public String name(){
         return nameService.getName();
     }
+
+    @RequestMapping("/")
+    public String home(){
+        return nameService.getHome();
+    }
 }

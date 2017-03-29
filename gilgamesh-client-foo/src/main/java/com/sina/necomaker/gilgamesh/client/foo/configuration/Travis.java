@@ -15,6 +15,5 @@ import org.springframework.stereotype.Component;
 @Getter
 @NoArgsConstructor
 public class Travis {
-
     private String name;
 }

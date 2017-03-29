@@ -13,6 +13,7 @@
         <module>gilgamesh-config-server</module>
         <module>gilgamesh-config-repo</module>
         <module>gilgamesh-client-foo</module>
+        <module>gilgamesh-client-kubo</module>
     </modules>
 
     <parent>

@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: config-client-foo
+    name: foo
   cloud:
     config:
       discovery:

@@ -5,8 +5,9 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * Created by Travis on 2016/12/8.
@@ -16,7 +17,8 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
 @EnableAutoConfiguration
 @EnableCircuitBreaker
 @EnableHystrixDashboard
-@FeignClient(name = "foo")
+@EnableFeignClients
+@ComponentScan(basePackages = "com.sina.necomaker.gilgamesh")
 public class FooApplication {
 
     public static void main(String[] args){

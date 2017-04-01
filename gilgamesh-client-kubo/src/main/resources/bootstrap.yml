@@ -1,0 +1,18 @@
+server:
+  port: 8699
+
+spring:
+  application:
+    name: kubo
+  cloud:
+      config:
+        discovery:
+          enabled: true
+        fail-fast: true
+        retry:
+          initial-interval: 1000
+          max-attempts: 6
+        name: foo
+        uri: ${CONFIG_SERVER_URI:${vcap.service.${PREFIX:}config-server.credentials.uri:http://user:password@localhost:8888}}
+  encrypt:
+    fail-on-error: false

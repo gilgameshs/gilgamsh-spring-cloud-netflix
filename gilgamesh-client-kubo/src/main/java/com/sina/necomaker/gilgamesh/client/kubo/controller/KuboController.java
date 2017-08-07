@@ -1,14 +1,12 @@
 package com.sina.necomaker.gilgamesh.client.kubo.controller;
 
-import com.netflix.discovery.converters.Auto;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.sina.necomaker.gilgamesh.client.kubo.service.KuboService;
+import com.sina.necomaker.gilgamesh.client.kubo.vo.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,6 +30,13 @@ public class KuboController {
         ServiceInstance instance = discoveryClient.getLocalServiceInstance();
         log.info("/kubo, host: " + instance.getHost() + ", service_id: " + instance.getServiceId() + ", service_port: " + instance.getPort());
         return kuboService.home();
+    }
+
+    @RequestMapping(value = "/dina", method = RequestMethod.POST)
+    public String dina(User user) {
+        ServiceInstance instance = discoveryClient.getLocalServiceInstance();
+        log.info("/kubo, host: " + instance.getHost() + ", service_id: " + instance.getServiceId() + ", service_port: " + instance.getPort());
+        return user.toString();
     }
 
 

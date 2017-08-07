@@ -2,23 +2,21 @@ package com.sina.necomaker.gilgamesh.client.foo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
  * Created by Travis on 2016/12/8.
  */
-@SpringBootApplication
-@EnableDiscoveryClient
+
 @EnableAutoConfiguration
-@EnableCircuitBreaker
 @EnableHystrixDashboard
 @EnableFeignClients
-@ComponentScan(basePackages = "com.sina.necomaker.gilgamesh")
+@SpringCloudApplication
+@ComponentScan(basePackages = {"com.sina.necomaker.gilgamesh"})
 public class FooApplication {
 
     public static void main(String[] args){

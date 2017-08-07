@@ -2,7 +2,6 @@ package com.sina.necomaker.gilgamesh.client.foo.controller;
 
 import com.sina.necomaker.gilgamesh.client.foo.service.DeveloperNameService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,4 +23,10 @@ public class DeveloperNameController {
     public String home(){
         return nameService.getHome();
     }
+
+    @RequestMapping("/dina")
+    public String dina(){
+        return nameService.dina();
+    }
+
 }

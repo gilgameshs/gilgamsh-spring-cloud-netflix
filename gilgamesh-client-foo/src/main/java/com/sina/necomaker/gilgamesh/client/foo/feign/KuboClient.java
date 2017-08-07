@@ -1,6 +1,7 @@
 package com.sina.necomaker.gilgamesh.client.foo.feign;
 
 import com.sina.necomaker.gilgamesh.client.foo.configuration.KuboConfiguration;
+import com.sina.necomaker.gilgamesh.client.kubo.vo.User;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,4 +14,7 @@ public interface KuboClient {
 
     @RequestMapping(value = "/kubo", method = RequestMethod.GET)
     String kubo();
+
+    @RequestMapping(value = "/dina", method = RequestMethod.POST)
+    String dina(User user);
 }
